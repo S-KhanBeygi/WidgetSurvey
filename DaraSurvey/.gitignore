@@ -1,0 +1,6 @@
+.vscode
+.vs
+bin
+obj
+*.csproj.user
+wwwroot/*

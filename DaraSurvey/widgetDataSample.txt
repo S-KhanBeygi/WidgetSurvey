@@ -1,0 +1,185 @@
+﻿POST ​/api​/v1​/widgets
+
+{
+    "id": "w1",
+    "type": "Text",
+    "title": "ویجت سوال تشریحی با ولیدیشن چک 10 کاراکتر",
+    "subtitle": "",
+    "url": "",
+    "viewData": "",
+    "availability": "",
+    "text" : "مقداری توضیحات",
+    "view" : "",
+    "maximumLength" : 10
+  }
+
+
+ // --------------------------
+
+{
+    "id": "w2",
+    "type": "StarRaiting",
+    "title": "ویجت امتیاز دهی ستاره ای با تعداد ستاره متغیر",
+    "subtitle": "",
+    "url": "",
+    "viewData": "",
+    "availability": "minim",
+    "text" : " به نظر شما آیاز درست می باشد",
+    "items":[
+        {"id":1, "title":"ستاره 1"},
+        {"id":2, "title":"ستاره 2"},
+        {"id":3, "title":"ستاره 3"},
+        {"id":4, "title":"ستاره 4"},
+        {"id":5, "title":"ستاره 5"}]
+  }
+
+// --------------------------
+
+{
+    "id": "w3",
+    "type": "Dropdown",
+    "title": "ویجت سوال چند گزینه ای با تعداد گزینه متغیر",
+    "subtitle": "",
+    "url": "",
+    "viewData": "",
+    "availability": "",
+    "items":[
+        {"id":1, "title":"گزینه 1"},
+        {"id":2, "title":"گزینه 2"},
+        {"id":3, "title":"گزینه 3"},
+        {"id":4, "title":"گزینه 4"},
+        {"id":5, "title":"گزینه 5"}]
+  }
+  // --------------------------
+
+  {
+    "id": "w4",
+    "type": "ThankYouPage",
+    "title": "ویجت صفحه تشکر بابت شرکت در نظر سنجی",
+    "subtitle": "",
+    "url": "",
+    "viewData": "",
+    "availability": "",
+    "text":"با تشکر از شرکت در آزمون",
+    "image":"image path",
+    "returnUrl":"return url"
+  }
+
+  // ------------
+  
+  {
+    "id": "w5",
+    "type": "WelcomePage",
+    "title": "ویجت خوش آمد گویی به شرکت در نظر سنجی",
+    "subtitle": "",
+    "url": "",
+    "viewData": ",
+    "availability": "",
+    "text":"خوش آمدگویی به آزمون",
+    "image":"image path"
+  }
+
+
+=====================================================================
+
+  POST  ​/api​/v1​/surveys
+  {
+  "title": "آزمون استخدامی",
+  "description": "string",
+  "surveyDesignerId": "",
+  "logo": "logo image path",
+  "welcomePageWidgetId": 5,
+  "thankYouPageWidgetId": 4
+}
+
+=====================================================================
+
+​Get /api​/v1​/questions
+{
+  "text": "سوال تشریحی",
+  "widgetId": 1,
+  "surveyId": 1,
+  "isRequired": true,
+  "isCountable": false
+}
+
+{
+  "text": "سوال رتبه بندی ستاره ای",
+  "widgetId": 2,
+  "surveyId": 1,
+  "isRequired": true,
+  "isCountable": true
+}
+
+{
+  "text": "سوال چند گزینه ای متغیر",
+  "widgetId": 3,
+  "surveyId": 1,
+  "isRequired": true,
+  "isCountable": true
+}
+
+=====================================================================
+
+/api/v1/surveys/1/register
+
+=====================================================================
+
+api/v1/user-surveys/1/approved?approved=true
+
+=====================================================================
+
+/api/v1/surveys/1
+
+=====================================================================
+
+api/v1/surveys/1/questions
+
+=====================================================================
+
+/api/v1/surveys/{id}/responses
+[
+  {
+    "questionId": 1,
+    "response": "CheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeekValidation1"
+  },
+ {
+    "questionId": 2,
+    "response": "1"
+  },
+ {
+    "questionId": 3,
+    "response": "3"
+  }
+]
+// --------------------
+[
+  {
+    "questionId": 1,
+    "response": "OkText"
+  },
+ {
+    "questionId": 2,
+    "response": "CheckValidation2"
+  },
+ {
+    "questionId": 3,
+    "response": "3"
+  }
+]
+
+// --------------------
+[
+  {
+    "questionId": 1,
+    "response": "TotalOkey"
+  },
+ {
+    "questionId": 2,
+    "response": "5"
+  },
+ {
+    "questionId": 3,
+    "response": "3"
+  }
+]
