@@ -43,7 +43,7 @@ namespace DaraSurvey.Core
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //app.EnsureMigrationOfContext<DB>();
+            app.EnsureMigrationOfContext<DB>();
             app.UseHsts();
             app.UseHttpsRedirection();
             app.UseRouting();
